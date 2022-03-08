@@ -1,24 +1,25 @@
 #include "func.h"
+#include "graphics.h"
 
 int main(){
     system("cls");
-    int userGuessTimes=0;
-    do {
+    while(userGuessTimes<=timesLimit){
         renderGame(userGuessTimes);
-        cout<<"\n"<<ans<<endl;
+        if(userGuessTimes==timesLimit){
+            youLose();
+            break;
+        }
+        updateGame(ans);
         char userGuessChar = getUserGuessChar();
         if(!checkAns(userGuessChar, ans))
             userGuessTimes++;
         if(ans==secretWord){
-            printResult();
+            system("cls");
+            renderGame(userGuessTimes);
+            youWin();
             break;
         }
         system("cls");
-    } while(userGuessTimes<timesLimit);
-    if(userGuessTimes==7){
-        renderGame(7);
-        cout<<"\nYou lose!!"<<endl;
-        cout<<"Secret word is"<<secretWord;
     }
     return 0;
 }

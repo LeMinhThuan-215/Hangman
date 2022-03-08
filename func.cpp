@@ -19,10 +19,14 @@ bool checkAns(char c, string &s){
     return check;
 }
 
-void printResult(){
-    system("cls");
+void youWin(){
     cout<<"\nCongrat, you win!!";
     cout<<"\n"<<"Secret word is: "<<secretWord<<"\n";
+}
+
+void youLose(){
+    cout<<"\nYou lose!!"<<endl;
+    cout<<"Secret word is: "<<secretWord;
 }
 
 char getUserGuessChar(){
@@ -30,6 +34,7 @@ char getUserGuessChar(){
     char c;
     cin>>c;
     cin.sync();
+    userGuessed+=c;
     return c;
 }
 
@@ -40,86 +45,7 @@ string creteAns(){
     return s;
 }
 
-void renderGame(int cnt){
-    switch(cnt){
-        case 0:
-            cout<<"=================== "<<endl;
-            cout<<"\\\\||//            "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<" /__\\              "<<endl;
-            break;
-        case 1:
-            cout<<"=================== "<<endl;
-            cout<<"\\\\||//           |"<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<" /__\\              "<<endl;
-            break;
-        case 2:
-            cout<<"=================== "<<endl;
-            cout<<"\\\\||//           |"<<endl;
-            cout<<"  ||             O  "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<" /__\\              "<<endl;
-            break;
-        case 3:
-            cout<<"=================== "<<endl;
-            cout<<"\\\\||//           |"<<endl;
-            cout<<"  ||             O  "<<endl;
-            cout<<"  ||             |  "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<" /__\\              "<<endl;
-            break;
-        case 4:
-            cout<<"=================== "<<endl;
-            cout<<"\\\\||//           |"<<endl;
-            cout<<"  ||             O  "<<endl;
-            cout<<"  ||            /|  "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<" /__\\              "<<endl;
-            break;
-        case 5:
-            cout<<"=================== "<<endl;
-            cout<<"\\\\||//           |"<<endl;
-            cout<<"  ||             O  "<<endl;
-            cout<<"  ||            /|\\"<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<" /__\\              "<<endl;
-            break;
-        case 6:
-            cout<<"=================== "<<endl;
-            cout<<"\\\\||//           |"<<endl;
-            cout<<"  ||             O  "<<endl;
-            cout<<"  ||            /|\\"<<endl;
-            cout<<"  ||            /   "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<" /__\\              "<<endl;
-            break;
-        case 7:
-            cout<<"=================== "<<endl;
-            cout<<"\\\\||//           |"<<endl;
-            cout<<"  ||             O  "<<endl;
-            cout<<"  ||            /|\\"<<endl;
-            cout<<"  ||            / \\"<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<"  ||                "<<endl;
-            cout<<" /__\\              "<<endl;
-    }
+void updateGame(string ans){
+    cout<<"\n"<<ans<<endl;
+    cout<<"The letters you guessed: "<<userGuessed<<endl;
 }

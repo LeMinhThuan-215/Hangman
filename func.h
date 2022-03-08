@@ -14,13 +14,16 @@ using namespace std;
 string randomWord();
 string creteAns();
 bool checkAns(char c, string &s);
-void printResult();
+void youWin();
+void youLose();
 char getUserGuessChar();
-void renderGame(int cnt);
+void updateGame(string ans);
 
 //global variables
 static string secretWord=randomWord();
 static string ans=creteAns();
+static string userGuessed="";
 static const int timesLimit=7;
+static int userGuessTimes=0;
 
 #endif
